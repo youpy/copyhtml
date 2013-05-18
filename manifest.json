@@ -1,0 +1,22 @@
+{
+    "name": "copyhtml",
+    "manifest_version": 2,
+    "description": "Copy rendered html of current page to clipboard",
+    "version": "0.0.1",
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_title": "Copy html to clipboard"
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*"],
+        "js": ["content_script.js"]
+    }],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "clipboardWrite",
+        "tabs"
+    ]
+}
